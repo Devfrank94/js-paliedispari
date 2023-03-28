@@ -12,10 +12,12 @@ Creare una funzione per capire se la parola inserita è palindroma*/
 
 4. attraverso il metodo join salviamo gli elementi capovolti in una nuova stringa all'interno dello stesso array.
 
-5. creamo la condizione che controlli se la parola inserita all'inizio nel prompt corrisponda alla parola gestita nell'array quindi se il controllo soddisfa la condizione restituirà il messaggio che la parola in questione è palindroma, altrimenti no.
+5. creiamo la condizione che controlli se la parola inserita all'inizio nel prompt corrisponda alla parola gestita nell'array quindi se il controllo soddisfa la condizione restituirà il messaggio che la parola in questione è palindroma, altrimenti no.
 
 */
 let arrWord = [];
+
+let arrPalin = [];
 
 const wordIns = prompt('Inserisci una parola da verificare');
 console.log(wordIns);
@@ -24,10 +26,21 @@ arrWord.push(wordIns);
 
 console.log(arrWord);
 
-const arrPalin = wordIns.split('');
+arrPalin = wordIns.split('');
 
 console.log(arrPalin);
 
 arrPalin.reverse('');
 
 console.log(arrPalin);
+
+let newWord = arrPalin.join('')
+
+console.log(newWord);
+
+if (wordIns === newWord) {
+  console.log("Parola palindroma")
+
+}else {
+  console.log("Non palindroma")
+}
