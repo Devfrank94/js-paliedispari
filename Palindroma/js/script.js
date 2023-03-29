@@ -6,41 +6,22 @@ Creare una funzione per capire se la parola inserita è palindroma*/
 
 1. Chiediamo all'utente attraverso un prompt di inserire la parola da controllare.
 
-2. Salviamo la parola in un array ed attraverso il metodo split, dividiamo la parola in lettera per lettera.
-
-3. attraverso il metodo reverse di un array andiamo a riposizionare gli elementi scomposti appunto al contrario.
-
-4. attraverso il metodo join salviamo gli elementi capovolti in una nuova stringa all'interno dello stesso array.
-
-5. creiamo la condizione che controlli se la parola inserita all'inizio nel prompt corrisponda alla parola gestita nell'array quindi se il controllo soddisfa la condizione restituirà il messaggio che la parola in questione è palindroma, altrimenti no.
+2. Creo funzione per interrogare se parola inserita è palindroma
 
 */
-let arrWord = [];
 
-let arrPalin = [];
+const wordIns = prompt('Inserisci una parola').trim();
+const wordReverse = turnWord(wordIns);
 
-const wordIns = prompt('Inserisci una parola da verificare');
-console.log(wordIns);
 
-arrWord.push(wordIns);
+const risultato = (wordIns.toLowerCase() === wordReverse.toLowerCase()) ? 'La parola è palindroma' : 'La parola non è palindroma';
 
-console.log(arrWord);
+console.log(risultato);
 
-arrPalin = wordIns.split('');
+function turnWord(word){
+  let wordReverse = '';
 
-console.log(arrPalin);
+  wordReverse = word.split('').reverse().join('');
 
-arrPalin.reverse('');
-
-console.log(arrPalin);
-
-let newWord = arrPalin.join('')
-
-console.log(newWord);
-
-if (wordIns === newWord) {
-  console.log("Parola palindroma")
-
-}else {
-  console.log("Non palindroma")
+  return wordReverse;
 }
